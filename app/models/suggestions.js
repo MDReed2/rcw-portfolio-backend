@@ -18,4 +18,4 @@ const suggestionsSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Suggestions', suggestionsSchema)
+module.exports = mongoose.model('Suggestion', suggestionsSchema)
