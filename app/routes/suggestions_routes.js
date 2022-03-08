@@ -90,7 +90,7 @@ router.patch('/suggestions/:id', requireToken, removeBlanks, (req, res, next) =>
 router.delete('/suggestions/:id', requireToken, (req, res, next) => {
   Suggestion.findById(req.params.id)
     .then(handle404)
-     // ensure the signed in user (req.user.id) is the same as the suggestion's owner (suggestion.owner)
+  // ensure the signed in user (req.user.id) is the same as the suggestion's owner (suggestion.owner)
     .then(suggestion => requireOwnership(req, suggestion))
     // delete suggestion from mongodb
     .then(suggestion => suggestion.deleteOne())
