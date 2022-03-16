@@ -1,4 +1,73 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Reed Creative Werx Portfolio - frontend
+GitHub: https://github.com/MDReed2/rcw-portfolio-react
+Deployed: https://mdreed2.github.io/rcw-portfolio-react/
+
+# Reed Creative Werx Portfolio - backend
+GitHub: https://github.com/MDReed2/rcw-portfolio-backend
+Herohu: https://serene-crag-92448.herokuapp.com/
+
+---
+## The BackStory
+- This project has allowed us to incorporate everything we have learned in this cohort up until now.
+- JavaScript and React was implemented on the front-end while using Express Mongo/Mongoose  curl scripts for the back-end.
+- The knowledge gained over the last six months has provided me with a vision to create portfolio I would happily provide an URL to companies.
+- This portfolio has a backend that allows users to create, read, update, and delete suggestions.
+
+## npm packages used
+- npm i react-router-dom
+
+---
+## Instructions
+MVP User Stories
+1. As an unregistered user, I would like to have the option to sign up with First Name, Last Name, email and password to see more information.
+2. As a registered user, I would like to sign in with email and password.
+3. As a signed in user, I would like to change password.
+4. As a signed in user, I would like to sign out.
+5. As a signed in user, I would like to add a suggestion.
+6. As a signed in user, I would like to update a suggestion.
+7. As a signed in user, I would like to delete a suggestion.
+8. As a signed in user, I would like to see all my suggestions.
+8. As a signed in user, I would like to see all suggestions.
+9. As a signed in user, I would like to view a list of other users and view their jobs.
+
+## Improvements
+  1. Make navbar more dynamic
+  2. Add change password when signed in
+  3. Hide all components when suggestion CRUD operation is occurring
+  4. Style list of suggestions
+  5. Work on logic ti resolve scroll behavior issue in Chrome browser that does not work with react navlinks
+  6. Refactor code
+
+## WireFrame located in frontend project
+Reed Creative Werx Wireframe 
+![**Reed Creative Werx ERD**](./src/assets/capstone-ERD.png)
+![**Reed Creative Werx Schema**](./src/assets/capstone-schema.PNG)
+![**Reed Creative Werx Wireframe**](./src/assets/capstone-wireframe.png)
+
+
+ 1. User must be able to sign-up successfully
+ - upon. Clicking sign-up  submit button if successful user will be prompt with sign up message
+ - if sign-up failed then user will be prompt with error message
+
+ 2. User must be able to sign in successfully
+ - once sign-in submit button is clicked user will be prompt with a success or error message
+ - user will be directed to the Reed Creative Werx Homepage
+
+ 3. User post page
+ - user will use nav links to sign-out and change-password
+ - user must see fetch, add and delete buttons to interact with the database
+
+4. User will interact with the database
+ - user can add a suggestion to the list of suggestions: upon adding a suggestion the user will fill out the suggestion form and submit
+ - user submission will be saved into the database
+- user will be able to update
+ 5. User will be able to fetch/get all suggestions
+- all suggestions will show at the top of the portfolio
+- user can get one suggestion post by the ID
+
+ 6. User will be able to delete a post
+ - once deleted user should not be able to see it them when fetching the job post.
+
 
 # express-api-template
 
@@ -67,8 +136,8 @@ conventional for modern Express apps, and it's handy because we'll definitely
 use `npm` anyway. These are the commands available:
 
 | Command                | Effect                                                                                                      |
-|------------------------|-------------------------------------------------------------------------------------------------------------|
-| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.          |
 | `npm test`             | Runs automated tests.                                                                                       |
 | `npm run debug-server` | Starts the server in debug mode, which will print lots of extra info about what's happening inside the app. |
 
@@ -83,10 +152,10 @@ Add your own scripts to test your custom API.
 
 ### Authentication
 
-| Verb   | URI Pattern            | Controller#Action |
-|--------|------------------------|-------------------|
-| POST   | `/sign-up`             | `users#signup`    |
-| POST   | `/sign-in`             | `users#signin`    |
+| Verb   | URI Pattern         | Controller#Action |
+| ------ | ------------------- | ----------------- |
+| POST   | `/sign-up`          | `users#signup`    |
+| POST   | `/sign-in`          | `users#signin`    |
 | PATCH  | `/change-password/` | `users#changepw`  |
 | DELETE | `/sign-out/`        | `users#signout`   |
 
@@ -99,6 +168,8 @@ curl --include --request POST http://localhost:4741/sign-up \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
+      "firstname": "Example",
+      "lastname": "Example",
       "email": "an@example.email",
       "password": "an example password",
       "password_confirmation": "an example password"
